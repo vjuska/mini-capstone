@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "/all_products", controller: "products", action: "all_products"
-  get "/harvest_moon", controller: "products", action: "harvest_moon"
-  get "/frost_moon", controller: "products", action: "frost_moon"
-  get "/hunters_moon", controller: "products", action: "hunters_moon"
+  get "/products" => "products#index" #In your mini-capstone, create a single route that can display ANY single product using a url segment parameter.
+  post "/products" => "products#create"
+  get "/products/:id" => "products#show"
+  patch "/products/:id" => "products#update"
+  delete "/products/:id" => "products#destroy"
 end

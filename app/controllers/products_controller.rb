@@ -1,21 +1,40 @@
 class ProductsController < ApplicationController
-  def all_products
-    product = Product.all
+  def index
+    products = Product.all
+    render json: products.as_json
+  end
+
+  def create
+    product = Product.new(
+      name: params[:input_name],
+      price: params[:input_price],
+      image_url: params[:input_url],
+      description: params[:input_description],
+    )
+    product.save
     render json: product.as_json
   end
 
-  def harvest_moon
-    product = Product.first
+  def show
+    product = Product.find_by(id: params["id"]) #In your mini-capstone, create a single route that can display ANY single product using a query parameter.
     render json: product.as_json
   end
 
-  def frost_moon
-    product = Product.second
+  def update
+    product = Product.find_by(id: params["id"])
+
+    product.name = params[:input_name] || product.name
+    product.price = params[:input_price] || product.price
+    product.image_url = params[:input_url] || product.image_url
+    product.description = params[:input_description] || product.description
+
+    product.save
     render json: product.as_json
   end
 
-  def hunters_moon
-    product = Product.third
-    render json: product.as_json
+  def destroy
+    product = Product.find_by(id: params["id"])
+    product.destroy
+    render json: { message: "Product removed successfully" }
   end
 end
