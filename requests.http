@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
   "input_name": "Shampoo",
-  "input_price": 10,
+  "input_price": -9,
   "input_url": "https://images.squarespace-cdn.com/content/v1/5daa3d54e0f35e4910d94559/1625249558930-OQA9RK3Q7N4JBH5O5D2S/IMG_4212.jpg?format=1500w",
   "input_description": "This formula is sulfate free and can be used daily to ensure hair health and stimulation."
 }
@@ -26,3 +26,4 @@ Content-Type: application/json
 
 ### PRODUCTS DESTROY ###
 DELETE http://localhost:3000/products/4.json
+

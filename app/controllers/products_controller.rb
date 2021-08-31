@@ -11,8 +11,11 @@ class ProductsController < ApplicationController
       image_url: params[:input_url],
       description: params[:input_description],
     )
-    product.save
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -28,8 +31,11 @@ class ProductsController < ApplicationController
     product.image_url = params[:input_url] || product.image_url
     product.description = params[:input_description] || product.description
 
-    product.save
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
