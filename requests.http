@@ -9,10 +9,10 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "input_name": "Shampoo",
-  "input_price": -9,
-  "input_url": "https://images.squarespace-cdn.com/content/v1/5daa3d54e0f35e4910d94559/1625249558930-OQA9RK3Q7N4JBH5O5D2S/IMG_4212.jpg?format=1500w",
-  "input_description": "This formula is sulfate free and can be used daily to ensure hair health and stimulation."
+  "name": "Shampoo",
+  "price": -9,
+  "url": "https://images.squarespace-cdn.com/content/v1/5daa3d54e0f35e4910d94559/1625249558930-OQA9RK3Q7N4JBH5O5D2S/IMG_4212.jpg?format=1500w",
+  "description": "This formula is sulfate free and can be used daily to ensure hair health and stimulation."
 }
 
 ### PRODUCTS UPDATE ###
@@ -20,8 +20,8 @@ PATCH http://localhost:3000/products/4.json
 Content-Type: application/json
 
 {
-  "input_name": "Conditioner",
-  "input_price": 12
+  "name": "Conditioner",
+  "price": 12
 }
 
 ### PRODUCTS DESTROY ###
