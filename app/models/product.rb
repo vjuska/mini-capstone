@@ -6,10 +6,10 @@ class Product < ApplicationRecord
   validates :description, length: { in: 5..500 }
 
   belongs_to :supplier
-  has_many :images
   # def supplier
   #   # Supplier.find_by(id: supplier_id)
   # end
+  has_many :images
 
   def is_discounted?
     if price <= 10 #Could also write lines 3-7 as just price <= 10
