@@ -47,13 +47,37 @@ DELETE http://localhost:3000/products/4.json
     "password": "password"
   }
 
-  ### Photos create
-  POST http://localhost:3000/photos
-  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
-  Content-Type: application/json
+### Photos create
+POST http://localhost:3000/photos
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+Content-Type: application/json
 
   {
     "name": "Test name",
     "width": 640,
     "height": 480
   }
+
+
+
+### Orders Create
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+
+
+  {
+    "product_id": 1,
+    "quantity": 1
+  }
+
+### ORDERS SHOW ###
+GET http://localhost:3000/orders/2.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzA3NzE2NjZ9.NvShSP8jtgpMP5HvkjZPIoD_tJ_WnWaxT1eOmsvAKNk
+
+### PRODUCTS INDEX ###
+GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzA3NzE2NjZ9.NvShSP8jtgpMP5HvkjZPIoD_tJ_WnWaxT1eOmsvAKNk
+
+### Show Order
+get http://localhost:3000/orders/2.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzA3NzE2NjZ9.NvShSP8jtgpMP5HvkjZPIoD_tJ_WnWaxT1eOmsvAKNk
