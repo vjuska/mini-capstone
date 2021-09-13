@@ -58,11 +58,14 @@ Content-Type: application/json
     "height": 480
   }
 
+### ORDERS INDEX
+GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
 
 
 ### Orders Create
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzExMzAyNjV9.a-ZXXF6kU4ihNQKXBIEUNgSTr8jV_wjSm0mtX-m7Nbs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
 Content-Type: application/json
 
   {
@@ -71,10 +74,7 @@ Content-Type: application/json
   }
 
 ### ORDERS SHOW ###
-GET http://localhost:3000/orders/2.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzExMzAyNjV9.a-ZXXF6kU4ihNQKXBIEUNgSTr8jV_wjSm0mtX-m7Nbs
+GET http://localhost:3000/orders/4.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
 
 
-### Show Order
-GET http://localhost:3000/orders/2.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzExMzAyNjV9.a-ZXXF6kU4ihNQKXBIEUNgSTr8jV_wjSm0mtX-m7Nbs
