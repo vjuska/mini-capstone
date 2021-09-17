@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE5MjY5NzV9.0rIEaFbAitRk56JflZlpuS1hSQGDVbcIbkZRhvCM55w
+
 ### PRODUCTS INDEX ###
 GET http://localhost:3000/products.json
 
@@ -7,17 +9,19 @@ GET http://localhost:3000/products/1.json
 ### PRODUCTS CREATE ###
 POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-  "name": "Shampoo",
-  "price": -9,
-  "url": "https://images.squarespace-cdn.com/content/v1/5daa3d54e0f35e4910d94559/1625249558930-OQA9RK3Q7N4JBH5O5D2S/IMG_4212.jpg?format=1500w",
-  "description": "This formula is sulfate free and can be used daily to ensure hair health and stimulation."
+  "name": "test",
+  "price": 2,
+  "url": "test image url",
+  "description": "test description"
 }
 
 ### PRODUCTS UPDATE ###
 PATCH http://localhost:3000/products/4.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "name": "Conditioner",
@@ -33,7 +37,7 @@ DELETE http://localhost:3000/products/4.json
 
   {
     "name": "Test name",
-    "email": "vic@test.com",
+    "email": "test@test.com",
     "password": "password",
     "password_confirmation": "password"
   }
@@ -49,7 +53,7 @@ DELETE http://localhost:3000/products/4.json
 
 ### Photos create
 POST http://localhost:3000/photos
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzExMzAyNjV9.a-ZXXF6kU4ihNQKXBIEUNgSTr8jV_wjSm0mtX-m7Nbs
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
   {
@@ -60,21 +64,35 @@ Content-Type: application/json
 
 ### ORDERS INDEX
 GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
 
 
 ### Orders Create
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
-Content-Type: application/json
-
-  {
-    "product_id": 1,
-    "quantity": 1
-  }
+Authorization: Bearer {{jwt}}
 
 ### ORDERS SHOW ###
 GET http://localhost:3000/orders/4.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE2MjkwNzJ9.5hnQEpXWVBFDfSyoruFEnr63OsIC_xT38X2JbloZ7BI
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
 
+### CARTED PRODUCTS INDEX ###
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
 
+### Carted Product Create ###
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id": 2,
+  "quantity": 3
+}
+
+### CARTED PRODUCT DESTROY
+DELETE http://localhost:3000/carted_products/6.json
+Authorization: Bearer {{jwt}}
