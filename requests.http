@@ -1,4 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzE5MjY5NzV9.0rIEaFbAitRk56JflZlpuS1hSQGDVbcIbkZRhvCM55w
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQwNDg4MzN9.8t8LwpYpC-VRpVXwv4gzXcAorjzbH0_VNiOmc47XVrA
+
 
 ### PRODUCTS INDEX ###
 GET http://localhost:3000/products.json
@@ -15,11 +16,12 @@ Authorization: Bearer {{jwt}}
   "name": "test",
   "price": 2,
   "url": "test image url",
-  "description": "test description"
+  "description": "test description",
+  "supplier_id": 2
 }
 
 ### PRODUCTS UPDATE ###
-PATCH http://localhost:3000/products/4.json
+PATCH http://localhost:3000/products/8.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -29,22 +31,23 @@ Authorization: Bearer {{jwt}}
 }
 
 ### PRODUCTS DESTROY ###
-DELETE http://localhost:3000/products/4.json
+DELETE http://localhost:3000/products/8.json
+Authorization: Bearer {{jwt}}
 
 ### Users create (signup)
-  POST http://localhost:3000/users
-  Content-Type: application/json
+POST http://localhost:3000/users
+Content-Type: application/json
 
   {
-    "name": "Test name",
-    "email": "test@test.com",
+    "name": "Test2",
+    "email": "test2@test.com",
     "password": "password",
     "password_confirmation": "password"
   }
 
 ### Sessions create (login)
-  POST http://localhost:3000/sessions
-  Content-Type: application/json
+POST http://localhost:3000/sessions
+Content-Type: application/json
 
   {
     "email": "vic@test.com",
